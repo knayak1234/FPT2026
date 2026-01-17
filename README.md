@@ -141,7 +141,7 @@ The website follows WCAG 2.1 AA guidelines:
 ## 👥 Contact
 
 For questions about the conference, contact:
-- **Dr. Lipsa Nanda** - snlipsa@gmail.com
+- **Dr. Lipsa Nanda** - nlipsa@gmail.com
 - **Dr. Binaya Kumar Sahu** - binayamsc12@gmail.com
 - **Dr. Kishora Nayak** - k.nayak1234@gmail.com
 
