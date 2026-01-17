@@ -1,0 +1,318 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 30, 41, 59;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+}
+
+/* CRITICAL: Cream theme background overrides - must come after Tailwind utilities */
+@layer utilities {
+  .cream .from-dark-bg {
+    --tw-gradient-from: #FFF8E7 !important;
+    --tw-gradient-to: rgb(255 248 231 / 0) !important;
+  }
+  
+  .cream .bg-dark-bg {
+    background-color: #FFF8E7 !important;
+  }
+  
+  .cream .via-primary\/10 {
+    --tw-gradient-to: rgb(59 130 246 / 0) !important;
+    --tw-gradient-stops: var(--tw-gradient-from), rgb(59 130 246 / 0.1), var(--tw-gradient-to) !important;
+  }
+  
+  .cream .to-secondary\/10 {
+    --tw-gradient-to: rgb(139 92 246 / 0.1) !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 248, 250, 252;
+    --background-start-rgb: 15, 23, 42;
+    --background-end-rgb: 15, 23, 42;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Cream/Light Theme */
+.cream {
+  --foreground-rgb: 67, 46, 34;
+  --background-start-rgb: 255, 250, 240;
+  --background-end-rgb: 255, 248, 235;
+}
+
+.cream .glass {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(148, 120, 97, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Cream theme section backgrounds */
+html.cream .hero-section,
+html.cream .section-dark,
+html.cream section.section-dark,
+html.cream section.hero-section {
+  background: linear-gradient(135deg, #FFF8E7 0%, #FDF5E6 50%, #FFEFD5 100%) !important;
+}
+
+/* Override Tailwind dark background classes in cream mode */
+html.cream .bg-gradient-to-br.from-dark-bg,
+html.cream .bg-dark-bg {
+  background: linear-gradient(135deg, #FFF8E7 0%, #FDF5E6 50%, #FFEFD5 100%) !important;
+}
+
+/* Cream theme text colors */
+.cream .text-white {
+  color: #2D3748 !important;
+}
+
+.cream .text-gray-200 {
+  color: #4A5568 !important;
+}
+
+.cream .text-gray-300 {
+  color: #5A6A7A !important;
+}
+
+.cream .text-gray-400 {
+  color: #718096 !important;
+}
+
+/* Hero text in cream mode */
+.cream .hero-title {
+  color: #1A365D !important;
+}
+
+.cream .hero-subtitle {
+  background: linear-gradient(to right, #F59E0B, #EF4444, #EC4899) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+/* Info card text in cream mode */
+.cream .text-yellow-300,
+.cream .text-yellow-400 {
+  color: #B7791F !important;
+}
+
+.cream .text-cyan-300,
+.cream .text-cyan-400 {
+  color: #0E7490 !important;
+}
+
+.cream .text-purple-300,
+.cream .text-purple-400,
+.cream .text-purple-200 {
+  color: #6B46C1 !important;
+}
+
+/* Gradient text stays visible in cream */
+.cream .bg-gradient-to-r.from-yellow-400 {
+  --tw-gradient-from: #B7791F;
+  --tw-gradient-to: #D69E2E;
+}
+
+/* Section borders and dividers */
+.cream .border-gray-600,
+.cream .border-gray-700 {
+  border-color: rgba(148, 120, 97, 0.3) !important;
+}
+
+/* Background adjustments */
+.cream .bg-gray-800\/80,
+.cream .bg-gray-800\/30 {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+html.cream .bg-dark-bg,
+html.cream .from-dark-bg,
+html.cream [class*="from-dark-bg"],
+html.cream [class*="bg-dark-bg"] {
+  background: linear-gradient(135deg, #FFF8E7 0%, #FDF5E6 50%, #FFEFD5 100%) !important;
+}
+
+/* Countdown timer in cream mode */
+.cream .countdown-box {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(148, 120, 97, 0.3) !important;
+  color: #2D3748 !important;
+}
+
+/* Navbar in cream mode */
+.cream .navbar-top {
+  background: rgba(255, 250, 240, 0.9) !important;
+  border-bottom: 1px solid rgba(148, 120, 97, 0.2) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+.cream .navbar-scrolled {
+  background: rgba(255, 250, 240, 0.98) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.cream .nav-link {
+  color: #4A5568 !important;
+}
+
+.cream .nav-link:hover {
+  color: #3B82F6 !important;
+}
+
+.cream .mobile-menu {
+  background: #FFF8E7 !important;
+  border-color: rgba(148, 120, 97, 0.2) !important;
+}
+
+/* Footer in cream mode */
+html.cream footer,
+html.cream footer.section-dark,
+html.cream .section-dark footer {
+  background: linear-gradient(135deg, #E8DFD0 0%, #DDD5C5 100%) !important;
+}
+
+/* Primary color text in cream (for accent items) */
+.cream .text-primary {
+  color: #2563EB !important;
+}
+
+.cream .text-accent {
+  color: #0891B2 !important;
+}
+
+/* Cards and borders in cream mode */
+.cream .border-white\/20,
+.cream .border-white\/10 {
+  border-color: rgba(148, 120, 97, 0.2) !important;
+}
+
+/* Speaker cards and contact cards in cream */
+.cream .text-lg.font-bold.text-white {
+  color: #1A365D !important;
+}
+
+/* Registration section text */
+.cream .text-sm.text-gray-200,
+.cream .text-xs.text-gray-200,
+.cream .text-sm.text-gray-300 {
+  color: #4A5568 !important;
+}
+
+/* Table styling in cream */
+.cream .border-b.border-gray-600 {
+  border-color: rgba(148, 120, 97, 0.3) !important;
+}
+
+/* Cream scrollbar */
+.cream ::-webkit-scrollbar-track {
+  background: #FDF5E6;
+}
+
+.cream ::-webkit-scrollbar-thumb {
+  background: #C4A77D;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid #3B82F6;
+  outline-offset: 2px;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* ============================================
+   HERO SECTION CREAM THEME - CRITICAL OVERRIDES
+   Must be at the end of file for highest priority
+   ============================================ */
+html.cream section#home,
+html.cream section#home.hero-section,
+html.cream .hero-section,
+html.cream #home {
+  background: linear-gradient(135deg, #FFF8E7 0%, #FDF5E6 50%, #FFEFD5 100%) !important;
+}
+
+/* Override inline gradient styles for Hero */
+html.cream section#home[class*="bg-gradient"],
+html.cream section[class*="from-dark-bg"] {
+  background: linear-gradient(135deg, #FFF8E7 0%, #FDF5E6 50%, #FFEFD5 100%) !important;
+}
+
+/* Hide or adjust the physics background in cream mode */
+html.cream .hero-section canvas,
+html.cream #home canvas {
+  opacity: 0.15 !important;
+}
+
+/* Adjust radial gradients in cream mode */
+html.cream .hero-section [class*="bg-\\[radial-gradient"],
+html.cream #home [class*="bg-\\[radial-gradient"] {
+  opacity: 0.3;
+}
