@@ -46,7 +46,7 @@ function SpeakerCard({ speaker, index }: { speaker: Speaker; index: number }) {
 
 export default function Speakers() {
   return (
-    <section id="speakers" className="section-dark py-20 bg-gradient-to-br from-dark-bg via-primary/10 to-secondary/10 dark:from-dark-bg dark:to-dark-bg">
+    <section id="speakers" className="section-dark pt-8 pb-20 bg-gradient-to-br from-dark-bg via-primary/10 to-secondary/10 dark:from-dark-bg dark:to-dark-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -55,8 +55,8 @@ export default function Speakers() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Invited Speakers
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 pb-2 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent leading-relaxed">
+            Plenary Speakers
           </h2>
           <p className="text-lg text-gray-200 max-w-2xl mx-auto">
             Renowned experts and researchers from prestigious institutions across India

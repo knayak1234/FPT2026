@@ -41,9 +41,9 @@ export default function Navbar() {
     { name: 'About', href: '#about' },
     { name: 'Speakers', href: '#speakers' },
     { name: 'Schedule', href: '#schedule' },
+    { name: 'Abstract', href: '#abstract' },
     { name: 'Registration', href: '#registration' },
     { name: 'Contact', href: '#contact' },
-    { name: 'FAQ', href: '#faq' },
   ]
 
   return (
@@ -69,6 +69,15 @@ export default function Navbar() {
               <Image
                 src="/images/Panchyat_Logo.jpg"
                 alt="Panchayat College Logo"
+                fill
+                className="object-contain rounded-full"
+                priority
+              />
+            </div>
+            <div className="relative w-14 h-14">
+              <Image
+                src="/images/Sir_CV_Raman-removebg-preview.png"
+                alt="Sir CV Raman"
                 fill
                 className="object-contain rounded-full"
                 priority

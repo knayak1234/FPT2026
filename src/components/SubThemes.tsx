@@ -9,18 +9,19 @@ export default function SubThemes() {
   const [expandedId, setExpandedId] = useState<number | null>(null)
 
   return (
-    <div className="mb-20">
-      <motion.h2
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
-      >
-        Sub-themes
-      </motion.h2>
+    <section id="subthemes" className="section-dark py-20 bg-gradient-to-br from-dark-bg via-primary/10 to-secondary/10 dark:bg-dark-bg">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+        >
+          Sub-themes
+        </motion.h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
         {subThemes.map((theme, index) => (
           <motion.div
             key={theme.id}
@@ -65,10 +66,11 @@ export default function SubThemes() {
                 </ul>
               </div>
             </motion.div>
-          </motion.div>
+            </motion.div>
         ))}
+        </div>
       </div>
-    </div>
+    </section>
   )
 }
 

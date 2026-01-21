@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Train, Plane, MapPin, ExternalLink } from 'lucide-react'
+import { Train, Plane, MapPin, ExternalLink, Bus } from 'lucide-react'
+import Image from 'next/image'
 import { travelInfo } from '@/lib/data'
 
 export default function HowToReach() {
@@ -30,6 +31,21 @@ export default function HowToReach() {
 
           <div className="glass rounded-2xl p-6 backdrop-blur-md">
             <div className="flex items-center space-x-3 mb-4">
+              <Bus className="w-6 h-6 text-primary dark:text-accent" />
+              <h4 className="text-xl font-bold text-white">By Bus</h4>
+            </div>
+            <ul className="space-y-2">
+              <li className="text-gray-200">
+                <strong className="text-white">Govt. Bus Stand, Bargarh</strong> - 3 km from the college
+              </li>
+              <li className="text-gray-200">
+                <strong className="text-white">Private Bus Stand, Bargarh</strong> - 5 km from the college
+              </li>
+            </ul>
+          </div>
+
+          <div className="glass rounded-2xl p-6 backdrop-blur-md">
+            <div className="flex items-center space-x-3 mb-4">
               <Plane className="w-6 h-6 text-primary dark:text-accent" />
               <h4 className="text-xl font-bold text-white">By Air</h4>
             </div>
@@ -52,9 +68,9 @@ export default function HowToReach() {
         </div>
 
         {/* Map */}
-        <div className="glass rounded-2xl p-6 backdrop-blur-md">
+        <div className="glass rounded-2xl p-6 backdrop-blur-md h-full flex flex-col">
           <h4 className="text-xl font-bold mb-4 text-white">Location Map</h4>
-          <div className="aspect-video rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 mb-4">
+          <div className="flex-1 min-h-[400px] rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 mb-4">
             <iframe
               src={travelInfo.mapEmbedUrl}
               width="100%"
