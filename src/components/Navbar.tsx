@@ -74,7 +74,7 @@ export default function Navbar() {
                 priority
               />
             </div>
-            <div className="relative w-14 h-14">
+            <div className="relative w-16 h-16">
               <Image
                 src="/images/Sir_CV_Raman-removebg-preview.png"
                 alt="Sir CV Raman"

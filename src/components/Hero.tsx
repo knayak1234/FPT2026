@@ -89,7 +89,7 @@ export default function Hero() {
                 ease: 'easeInOut',
               }}
             >
-              Frontiers of Physics and Technology
+              Frontiers in Physics and Technology
             </motion.h1>
           </motion.div>
 

@@ -45,9 +45,9 @@ export const conferenceData = {
 };
 
 export const speakers: Speaker[] = [
-  { id: 1, name: "Prof. Prashanta Panigrahi", title: "Former Prof.", affiliation: "IISER Kolkata", image: "/images/InvitedSpeaker/Prashanta_Panigrahi.png" },
+  { id: 1, name: "Prof. Prashanta K. Panigrahi", title: "Former Prof.", affiliation: "IISER Kolkata", image: "/images/InvitedSpeaker/Prashanta_Panigrahi.png" },
   { id: 2, name: "Prof. Asima Pradhan", title: "Former Prof.", affiliation: "IIT Kanpur", image: "/images/InvitedSpeaker/Asima_Pradhan.png" },
-  { id: 3, name: "Prof. Hiranmayaa Mishra", title: "Prof.", affiliation: "PRL, Ahmedabad", image: "/images/InvitedSpeaker/Hiranmaya.png" },
+  { id: 3, name: "Prof. Hiranmaya Mishra", title: "Prof.", affiliation: "PRL, Ahmedabad", image: "/images/InvitedSpeaker/Hiranmaya.png" },
   { id: 4, name: "Prof. Raghunath Sahoo", title: "Prof.", affiliation: "IIT Indore", image: "/images/InvitedSpeaker/Raghunath_Sahoo1.png" },
   { id: 4, name: "Prof. Susanta Kumar Das", title: "V.C (I/C)", affiliation: "GM University", image: "/images/InvitedSpeaker/SusantaKumarDas.png" },
   { id: 5, name: "Prof. Subhankar Bedanta", title: "Prof.", affiliation: "NISER, Bhubaneswar", image: "/images/InvitedSpeaker/Subhankar_Bedanta2.png" },

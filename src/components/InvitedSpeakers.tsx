@@ -7,6 +7,9 @@ const invitedSpeakers = [
   { id: 2, name: "Dr. Sudipta Mahana", affiliation: "Rajdhani College, Bhubaneswar" },
   { id: 3, name: "Dr. Pankaj Kumar Sahoo", affiliation: "Dhenkanal Autonomous College, Dhenkanal" },
   { id: 4, name: "Dr. Subrat Biswal", affiliation: "KKS Women's College, Balasore" },
+  { id: 5, name: "Dr. Ranjana Rani Das", affiliation: "Rourkela Autonomous College, Rourkela" },
+  { id: 6, name: "Dr. Jogesh Rout", affiliation: "Shreeram College, Rampur" },
+  { id: 7, name: "Dr. Ranjita Mohapatra", affiliation: "Rajdhani College, Bhubaneswar" },
 ]
 
 export default function InvitedSpeakers() {
