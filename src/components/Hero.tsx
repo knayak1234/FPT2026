@@ -122,7 +122,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mb-12 relative z-10"
           >
-            <CountdownTimer targetDate="2026-01-31T00:00:00" />
+            <CountdownTimer targetDate="2026-01-31T10:00:00+05:30" />
           </motion.div>
 
           {/* Info Cards */}
