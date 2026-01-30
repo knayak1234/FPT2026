@@ -47,6 +47,27 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Blink animation for Timetable nav link */
+@keyframes nav-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+.nav-link-blink {
+  animation: nav-blink 1.5s ease-in-out infinite;
+  color: #f87171 !important; /* red-400 - override theme */
+}
+.nav-link-blink:hover {
+  color: #fca5a5 !important; /* red-300 */
+}
+.cream .nav-link-blink,
+.dark .nav-link-blink {
+  color: #f87171 !important;
+}
+.cream .nav-link-blink:hover,
+.dark .nav-link-blink:hover {
+  color: #fca5a5 !important;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -200,6 +221,16 @@ html.cream [class*="bg-dark-bg"] {
   color: #3B82F6 !important;
 }
 
+/* Timetable link: keep red in cream theme (must come after .cream .nav-link) */
+.cream .nav-link.nav-link-blink,
+.cream a.nav-link-blink {
+  color: #f87171 !important;
+}
+.cream .nav-link.nav-link-blink:hover,
+.cream a.nav-link-blink:hover {
+  color: #fca5a5 !important;
+}
+
 .cream .mobile-menu {
   background: #FFF8E7 !important;
   border-color: rgba(148, 120, 97, 0.2) !important;
@@ -230,6 +261,260 @@ html.cream .section-dark footer {
 /* Speaker cards and contact cards in cream */
 .cream .text-lg.font-bold.text-white {
   color: #1A365D !important;
+}
+
+/* Schedule section – visually appealing (dark theme) */
+#schedule .schedule-table-container {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(59, 130, 246, 0.1);
+}
+#schedule .schedule-thead-row {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.35) 0%, rgba(139, 92, 246, 0.35) 100%);
+  border-bottom: 2px solid rgba(139, 92, 246, 0.4);
+}
+#schedule .schedule-thead-row .schedule-th {
+  color: #f8fafc !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+#schedule .schedule-day-header {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(139, 92, 246, 0.2) 100%);
+  border-bottom: 2px solid rgba(139, 92, 246, 0.3);
+  padding: 0.75rem 1rem;
+}
+#schedule .schedule-day-header-centered {
+  justify-content: center;
+}
+#schedule .schedule-day-accent {
+  width: 4px;
+  height: 2rem;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #3B82F6, #8B5CF6);
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+#schedule .schedule-day-title {
+  color: #e2e8f0 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+#schedule .schedule-time-cell {
+  background: rgba(59, 130, 246, 0.08);
+  color: #e2e8f0 !important;
+  font-weight: 600;
+}
+#schedule .schedule-row-alt {
+  background: rgba(255, 255, 255, 0.02);
+}
+#schedule .schedule-row:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+#schedule .schedule-row-break {
+  background: linear-gradient(90deg, rgba(6, 182, 212, 0.18) 0%, rgba(6, 182, 212, 0.08) 100%) !important;
+}
+#schedule .schedule-row-break td:first-child {
+  border-left: 4px solid #06B6D4;
+}
+#schedule .schedule-row-break .schedule-talk-cell {
+  font-style: normal;
+  color: #f8fafc !important;
+}
+#schedule .schedule-break-highlight {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.35) 0%, rgba(59, 130, 246, 0.25) 100%);
+  border: 1px solid rgba(6, 182, 212, 0.5);
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: #f8fafc;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 8px rgba(6, 182, 212, 0.2);
+}
+#schedule .schedule-speaker-badge {
+  background: rgba(59, 130, 246, 0.15) !important;
+  border: 1px solid rgba(59, 130, 246, 0.35) !important;
+}
+
+/* Special session: Invited/Oral Presentation of Participants */
+#schedule .schedule-row-special {
+  background: linear-gradient(90deg, rgba(139, 92, 246, 0.2) 0%, rgba(139, 92, 246, 0.08) 100%) !important;
+}
+#schedule .schedule-row-special td:first-child {
+  border-left: 4px solid #8B5CF6;
+}
+#schedule .schedule-special-highlight {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.4) 0%, rgba(59, 130, 246, 0.25) 100%);
+  border: 1px solid rgba(139, 92, 246, 0.5);
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: #f8fafc;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.25);
+}
+
+/* Schedule section – cream theme (readable + appealing) */
+.cream #schedule .schedule-table-container {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border: 1px solid rgba(148, 120, 97, 0.22) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(59, 130, 246, 0.08) !important;
+}
+.cream #schedule .schedule-th,
+.cream #schedule .schedule-td,
+.cream #schedule .schedule-tbody {
+  color: #1e293b !important;
+}
+.cream #schedule .schedule-thead-row {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.18) 0%, rgba(139, 92, 246, 0.15) 100%) !important;
+  border-bottom: 2px solid rgba(139, 92, 246, 0.25) !important;
+}
+.cream #schedule .schedule-thead-row .schedule-th {
+  color: #1e293b !important;
+  text-shadow: none;
+}
+.cream #schedule .schedule-day-header {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(139, 92, 246, 0.1) 100%) !important;
+  border-bottom: 2px solid rgba(139, 92, 246, 0.2) !important;
+}
+.cream #schedule .schedule-day-accent {
+  background: linear-gradient(180deg, #3B82F6, #8B5CF6) !important;
+}
+.cream #schedule .schedule-day-title {
+  color: #1d4ed8 !important;
+  text-shadow: none;
+}
+.cream #schedule .schedule-venue {
+  color: #475569 !important;
+}
+.cream #schedule .schedule-time-cell {
+  background: rgba(59, 130, 246, 0.08) !important;
+  color: #1e40af !important;
+}
+.cream #schedule .schedule-row-alt {
+  background: rgba(59, 130, 246, 0.03) !important;
+}
+.cream #schedule .schedule-table tbody tr:hover {
+  background: rgba(59, 130, 246, 0.06) !important;
+}
+.cream #schedule .schedule-row-break {
+  background: linear-gradient(90deg, rgba(6, 182, 212, 0.14) 0%, rgba(6, 182, 212, 0.06) 100%) !important;
+}
+.cream #schedule .schedule-row-break td:first-child {
+  border-left: 4px solid #0891b2;
+}
+.cream #schedule .schedule-row-break .schedule-talk-cell {
+  color: #1e293b !important;
+}
+.cream #schedule .schedule-break-highlight {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.22) 0%, rgba(59, 130, 246, 0.15) 100%) !important;
+  border: 1px solid rgba(6, 182, 212, 0.4) !important;
+  color: #0e7490 !important;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(6, 182, 212, 0.15);
+}
+.cream #schedule .schedule-speaker-badge {
+  background: rgba(59, 130, 246, 0.1) !important;
+  border: 1px solid rgba(59, 130, 246, 0.2) !important;
+  color: #1e293b !important;
+}
+.cream #schedule .schedule-speaker-badge span {
+  color: #1e40af !important;
+}
+.cream #schedule .schedule-row-special {
+  background: linear-gradient(90deg, rgba(139, 92, 246, 0.15) 0%, rgba(139, 92, 246, 0.06) 100%) !important;
+}
+.cream #schedule .schedule-row-special td:first-child {
+  border-left: 4px solid #7c3aed;
+}
+.cream #schedule .schedule-special-highlight {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.25) 0%, rgba(59, 130, 246, 0.15) 100%) !important;
+  border: 1px solid rgba(139, 92, 246, 0.4) !important;
+  color: #5b21b6 !important;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.15);
+}
+
+/* Nested Oral / Invited Presentation timetable (expandable) */
+#schedule .schedule-oral-inner {
+  border-left: 3px solid rgba(139, 92, 246, 0.6);
+  margin-left: 0.5rem;
+  background: rgba(30, 41, 59, 0.4);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+}
+#schedule .oral-schedule-table {
+  min-width: 100%;
+}
+#schedule .oral-thead-row {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.4) 0%, rgba(99, 102, 241, 0.35) 100%) !important;
+}
+#schedule .oral-thead-row .schedule-th {
+  color: #f8fafc !important;
+  font-size: 0.7rem;
+}
+#schedule .oral-tbody .oral-row {
+  background: rgba(51, 65, 85, 0.25);
+}
+#schedule .oral-tbody .oral-row-alt {
+  background: rgba(51, 65, 85, 0.4);
+}
+#schedule .oral-time-cell {
+  background: rgba(139, 92, 246, 0.2) !important;
+  color: #e2e8f0 !important;
+}
+#schedule .oral-author-name {
+  font-weight: 700;
+  color: #f8fafc !important;
+  font-size: 0.8125rem;
+}
+#schedule .oral-author-affiliation {
+  color: #cbd5e1 !important;
+  font-size: 0.7rem;
+}
+#schedule .oral-title-cell {
+  color: #e2e8f0 !important;
+}
+/* Cream theme: nested oral table – different colors, names clearly visible */
+.cream #schedule .schedule-oral-inner {
+  border-left-color: rgba(139, 92, 246, 0.5);
+  background: rgba(241, 245, 249, 0.9) !important;
+}
+.cream #schedule .oral-thead-row {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.22) 0%, rgba(99, 102, 241, 0.18) 100%) !important;
+}
+.cream #schedule .oral-thead-row .schedule-th {
+  color: #1e293b !important;
+}
+.cream #schedule .oral-tbody .oral-row {
+  background: rgba(255, 255, 255, 0.6) !important;
+}
+.cream #schedule .oral-tbody .oral-row-alt {
+  background: rgba(226, 232, 240, 0.8) !important;
+}
+.cream #schedule .oral-time-cell {
+  background: rgba(139, 92, 246, 0.12) !important;
+  color: #334155 !important;
+}
+.cream #schedule .oral-author-name {
+  color: #0f172a !important;
+  font-weight: 700;
+}
+.cream #schedule .oral-author-affiliation {
+  color: #475569 !important;
+}
+.cream #schedule .oral-title-cell {
+  color: #334155 !important;
+}
+.cream #schedule .schedule-oral-inner .schedule-td:not(.oral-time-cell):not(.oral-author-cell):not(.oral-title-cell),
+.cream #schedule .schedule-oral-inner .schedule-th {
+  color: #1e293b !important;
 }
 
 /* Registration section text */

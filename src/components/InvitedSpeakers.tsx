@@ -3,13 +3,14 @@
 import { motion } from 'framer-motion'
 
 const invitedSpeakers = [
-  { id: 1, name: "Dr. Jitendra Kumar Pradhan", affiliation: "Rajendra University, Balangir" },
-  { id: 2, name: "Dr. Sudipta Mahana", affiliation: "Rajdhani College, Bhubaneswar" },
-  { id: 3, name: "Dr. Pankaj Kumar Sahoo", affiliation: "Dhenkanal Autonomous College, Dhenkanal" },
-  { id: 4, name: "Dr. Subrat Biswal", affiliation: "KKS Women's College, Balasore" },
-  { id: 5, name: "Dr. Ranjana Rani Das", affiliation: "Rourkela Autonomous College, Rourkela" },
-  { id: 6, name: "Dr. Jogesh Rout", affiliation: "Shreeram College, Rampur" },
-  { id: 7, name: "Dr. Ranjita Mohapatra", affiliation: "Rajdhani College, Bhubaneswar" },
+  { id: 1, name: "Dr. Bharati Naik", affiliation: "Institute of Themba LABs, Cape Town, South Africa" },
+  { id: 2, name: "Dr. Jitendra Kumar Pradhan", affiliation: "Rajendra University, Balangir, Odisha 767002, India" },
+  { id: 3, name: "Dr. Sudipta Mahana", affiliation: "Rajdhani College, Bhubaneswar, Odisha 751003" },
+  { id: 4, name: "Dr. Pankaj K. Sahoo", affiliation: "Department of Physics, Dhenkanal Autonomous College, Dhenkanal, Odisha 759001, India" },
+  { id: 5, name: "Dr. Ranjita Mohapatra", affiliation: "Rajdhani College, Bhubaneswar, Odisha 751003" },
+  { id: 6, name: "Dr. Sushanta Kumar Pal", affiliation: "Center for Quantum Science and Technology (CQST), Siksha 'O' Anusandhan Deemed to be University, Bhubaneswar 751030, Odisha" },
+  { id: 7, name: "Dr. Jyoti Ranjan Sahu", affiliation: "Maharaja Sriram Chandra Bhanja Deo University, Baripada, Odisha" },
+  { id: 8, name: "Dr. Soumya S. Sarangi", affiliation: "Veer Surendra Sai University of Technology, Burla, Odisha 768018, India" },
 ]
 
 export default function InvitedSpeakers() {
@@ -48,12 +49,6 @@ export default function InvitedSpeakers() {
                 </div>
               </div>
             ))}
-          </div>
-          
-          <div className="mt-6 text-center">
-            <p className="text-gray-300 text-sm italic">
-              * More names will be added soon
-            </p>
           </div>
         </motion.div>
       </div>

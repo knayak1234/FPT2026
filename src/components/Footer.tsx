@@ -14,7 +14,7 @@ export default function Footer() {
       { name: 'About', href: '#about' },
       { name: 'Speakers', href: '#speakers' },
       { name: 'Registration', href: '#registration' },
-      { name: 'Schedule', href: '#schedule' },
+      { name: 'Timetable', href: '#timetable' },
       { name: 'Contact', href: '#contact' },
     ],
     resources: [
@@ -40,7 +40,7 @@ export default function Footer() {
               FPT 2026
             </h3>
             <p className="text-gray-400 mb-4 text-sm leading-relaxed">
-              National Conference on Frontiers of Physics and Technology hosted by Panchayat College, Bargarh.
+              National Conference on Frontiers in Physics and Technology hosted by Panchayat College, Bargarh.
             </p>
             <p className="text-gray-400 text-sm">
               Powered by P.G. Department of Physics, Panchayat College
@@ -160,6 +160,9 @@ export default function Footer() {
               </a>
             </div>
           </div>
+          <p className="text-gray-500 text-xs text-center mt-4 italic">
+            Designed & developed by Dr. Kishora Nayak
+          </p>
         </div>
       </div>
     </footer>

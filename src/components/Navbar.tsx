@@ -40,7 +40,7 @@ export default function Navbar() {
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Speakers', href: '#speakers' },
-    { name: 'Schedule', href: '#schedule' },
+    { name: 'Timetable', href: '#timetable' },
     { name: 'Abstract', href: '#abstract' },
     { name: 'Registration', href: '#registration' },
     { name: 'Contact', href: '#contact' },
@@ -94,11 +94,13 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`nav-link ${
-                  scrolled
-                    ? 'text-gray-700 dark:text-gray-300'
-                    : 'text-white drop-shadow-lg'
-                } hover:text-primary dark:hover:text-accent transition-colors font-semibold tracking-wide text-sm md:text-base`}
+                className={`nav-link font-semibold tracking-wide text-sm md:text-base transition-colors ${
+                  item.name === 'Timetable'
+                    ? 'text-red-400 hover:text-red-300 dark:text-red-400 dark:hover:text-red-300 drop-shadow-lg nav-link-blink'
+                    : scrolled
+                      ? 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-accent'
+                      : 'text-white drop-shadow-lg hover:text-primary dark:hover:text-accent'
+                }`}
               >
                 {item.name}
               </Link>
