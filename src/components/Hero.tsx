@@ -30,7 +30,10 @@ const HERO_PHOTOS = [
   '/images/Hero_Page_Photos/poster1.jpeg',
 ]
 
-const SLIDE_INTERVAL_MS = 5000
+// Interval must be longer than full transition (exit + enter) so each photo transitions the same way
+const FADE_DURATION = 2
+const FADE_DELAY = 0.8
+const SLIDE_INTERVAL_MS = (FADE_DELAY + FADE_DURATION) * 2 * 1000 + 800 // ~7.2s so transition completes before next
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false)
@@ -61,7 +64,17 @@ export default function Hero() {
     return () => observer.disconnect()
   }, [])
 
-  // Cycle through hero background photos
+  // Preload next and previous images so every transition is smooth and consistent
+  useEffect(() => {
+    const next = (currentPhotoIndex + 1) % HERO_PHOTOS.length
+    const prev = (currentPhotoIndex - 1 + HERO_PHOTOS.length) % HERO_PHOTOS.length
+    ;[next, prev].forEach((i) => {
+      const img = new window.Image()
+      img.src = HERO_PHOTOS[i]
+    })
+  }, [currentPhotoIndex])
+
+  // Cycle through hero background photos (interval > full transition time so each photo transitions the same)
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentPhotoIndex((prev) => (prev + 1) % HERO_PHOTOS.length)
@@ -75,6 +88,13 @@ export default function Hero() {
     const t = setTimeout(() => setInstantTransition(false), 100)
     return () => clearTimeout(t)
   }, [instantTransition, currentPhotoIndex])
+
+  // When an image fails to load (e.g. 404 on Vercel), skip to next after a short delay
+  const handleHeroImageError = () => {
+    setTimeout(() => {
+      setCurrentPhotoIndex((prev) => (prev + 1) % HERO_PHOTOS.length)
+    }, 800)
+  }
 
   return (
     <section
@@ -92,7 +112,7 @@ export default function Hero() {
             transition={
               instantTransition
                 ? { duration: 0, delay: 0 }
-                : { duration: 2.2, delay: 1.2, ease: 'easeInOut' }
+                : { duration: FADE_DURATION, delay: FADE_DELAY, ease: 'easeInOut' }
             }
             className="absolute inset-0"
           >
@@ -102,6 +122,7 @@ export default function Hero() {
               alt=""
               className="absolute inset-0 w-full h-full object-contain object-center"
               fetchPriority="high"
+              onError={handleHeroImageError}
             />
           </motion.div>
         </AnimatePresence>

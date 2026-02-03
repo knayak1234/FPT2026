@@ -143,6 +143,9 @@ Currently, no environment variables are required. If you need to add any:
 - Ensure logo is in `public/images/` directory
 - Check file name matches exactly: `Panchyat_Logo.jpg`
 - Verify Next.js Image component paths
+- **Vercel is case-sensitive**: File paths must match exactly (e.g. `1DSC08278.JPG` not `1dsc08278.jpg`). If you develop on macOS, test with `npm run build` locally to catch case mismatches.
+- **Commit all images**: Hero, Award, and Press Release images in `public/images/` must be committed to Git; uncommitted or gitignored files will not be deployed.
+- **Hero carousel**: If a hero image fails to load (404), the carousel now auto-advances to the next photo after 0.8s so the slide does not get stuck.
 
 ### Styling Issues
 - Clear `.next` cache: `rm -rf .next`
