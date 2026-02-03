@@ -92,7 +92,7 @@ export default function Hero() {
             transition={
               instantTransition
                 ? { duration: 0, delay: 0 }
-                : { duration: 1.5, delay: 0.8, ease: 'easeInOut' }
+                : { duration: 2.2, delay: 1.2, ease: 'easeInOut' }
             }
             className="absolute inset-0"
           >
