@@ -8,6 +8,8 @@ import SubThemes from '@/components/SubThemes'
 import Timeline from '@/components/Timeline'
 import AbstractSubmission from '@/components/AbstractSubmission'
 import Registration from '@/components/Registration'
+import Awards from '@/components/Awards'
+import PressRelease from '@/components/PressRelease'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
@@ -24,6 +26,8 @@ export default function Home() {
       <Timeline />
       <AbstractSubmission />
       <Registration />
+      <Awards />
+      <PressRelease />
       <Contact />
       <Footer />
     </main>

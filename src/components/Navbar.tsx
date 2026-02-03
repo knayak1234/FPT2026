@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Menu, X, Sun, Moon } from 'lucide-react'
+import { Menu, X, Sun, Moon, Images } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -9,7 +9,7 @@ import Link from 'next/link'
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [theme, setTheme] = useState<'dark' | 'cream'>('cream')
+  const [theme, setTheme] = useState<'dark' | 'cream'>('dark')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,8 +21,8 @@ export default function Navbar() {
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme')
-    // Default to 'cream' if no saved theme
-    const initialTheme = savedTheme === 'dark' ? 'dark' : 'cream'
+    // Default to 'dark' if no saved theme
+    const initialTheme = savedTheme === 'cream' ? 'cream' : 'dark'
     document.documentElement.classList.remove('dark', 'cream')
     document.documentElement.classList.add(initialTheme)
     setTheme(initialTheme)
@@ -36,14 +36,18 @@ export default function Navbar() {
     setTheme(nextTheme)
   }
 
+  // Album URL (no /photo/...) so the full album opens in grid view
+  const GALLERY_URL =
+    'https://photos.google.com/share/AF1QipPmNRfi3trRWaVyt4IwkmqAn9FgLzC2vJC14fbn5EfyF5BLr21Rbs3HWsfqCmjF3g?key=cjJYeVBueGhkUlFVd0YyYmhOOUVLcXBjaTVNUF9n'
+
   const navItems = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Speakers', href: '#speakers' },
     { name: 'Timetable', href: '#timetable' },
-    { name: 'Abstract', href: '#abstract' },
     { name: 'Registration', href: '#registration' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Award', href: '#awards' },
+    { name: 'Press', href: '#press' },
   ]
 
   return (
@@ -95,7 +99,7 @@ export default function Navbar() {
                 key={item.name}
                 href={item.href}
                 className={`nav-link font-semibold tracking-wide text-sm md:text-base transition-colors ${
-                  item.name === 'Timetable'
+                  item.name === 'Award'
                     ? 'text-red-400 hover:text-red-300 dark:text-red-400 dark:hover:text-red-300 drop-shadow-lg nav-link-blink'
                     : scrolled
                       ? 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-accent'
@@ -105,6 +109,21 @@ export default function Navbar() {
                 {item.name}
               </Link>
             ))}
+            <a
+              href={GALLERY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`inline-flex items-center gap-1.5 font-semibold tracking-wide text-sm md:text-base transition-colors ${
+                scrolled
+                  ? 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-accent'
+                  : 'text-white drop-shadow-lg hover:text-primary dark:hover:text-accent'
+              }`}
+              title="View photos"
+              aria-label="Open photo gallery"
+            >
+              <Images className="w-5 h-5" />
+              <span>Gallery</span>
+            </a>
             <Link
               href="#registration"
               className="px-6 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 font-bold tracking-wide text-sm md:text-base"
@@ -162,6 +181,17 @@ export default function Navbar() {
                   {item.name}
                 </Link>
               ))}
+              <a
+                href={GALLERY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="flex items-center gap-2 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-accent transition-colors font-medium"
+                aria-label="Open photo gallery"
+              >
+                <Images className="w-5 h-5 shrink-0" />
+                Gallery
+              </a>
               <Link
                 href="#registration"
                 onClick={() => setIsOpen(false)}
